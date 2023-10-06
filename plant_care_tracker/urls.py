@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import re_path
 from graphene_django.views import GraphQLView
 
 urlpatterns = [
-    path("graphql", GraphQLView.as_view(graphiql=True), name="graphql"),
+    re_path(r"^graphql/?$", GraphQLView.as_view(graphiql=True), name="graphql"),
 ]
